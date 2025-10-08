@@ -1,169 +1,290 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Popka Musik — Musica per Matrimoni ed Eventi</title>
-  <meta name="description" content="Popka — musica elegante e moderna per matrimoni, aperitivi e DJ set in Veneto. Contattaci per un preventivo.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#faf7f3;
-      --text:#111111;
-      --muted:#6b655f;
-      --accent:#c9a86b;
-      --card:#ffffff;
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased}
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--maxw); margin:0 auto; padding:28px}
-    .hero{position:relative; height:72vh; min-height:420px; display:flex; align-items:center;}
-    .hero .bg{position:absolute; inset:0; background:url('hero.jpg') center/cover no-repeat; filter:brightness(0.65) saturate(1.05);}
-    .hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(250,247,243,0.16), rgba(250,247,243,0.5));}
-    .hero .content{position:relative; z-index:2; width:100%;}
-    .brand{letter-spacing:4px; font-weight:800; font-size:26px; color:var(--card); background:linear-gradient(90deg,var(--accent),rgba(255,255,255,0.12)); display:inline-block; padding:6px 12px; border-radius:6px}
-    h1{font-size:42px; margin:12px 0 8px; color:#fff}
-    p.lead{color:#fff; opacity:0.95; max-width:720px; font-size:18px}
-    .hero-cta{margin-top:18px}
-    .btn{display:inline-block; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer}
-    .btn-primary{background:var(--accent); color:#111}
-    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff}
-    section{padding:60px 0}
-    .card{background:var(--card); border-radius:14px; padding:22px; box-shadow:0 6px 24px rgba(15,15,15,0.06)}
-    .grid{display:grid; gap:18px}
-    .grid-2{grid-template-columns:1fr 1fr}
-    h2{margin:0 0 12px}
-    .muted{color:var(--muted)}
-    .services{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px}
-    .service{padding:16px; border-radius:10px; background:linear-gradient(180deg, rgba(249,246,243,0.6), rgba(255,255,255,0.6));}
-    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
-    .gallery img{width:100%; height:200px; object-fit:cover; border-radius:8px}
-    .contact-grid{display:grid; grid-template-columns:1fr 360px; gap:22px}
-    .contact-card{display:flex; flex-direction:column; gap:8px}
-    .contact-row{display:flex; gap:10px; align-items:center}
-    footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
-    @media (max-width:900px){.grid-2{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}h1{font-size:34px}.hero{height:56vh}}
-    @media (max-width:520px){.gallery img{height:140px}h1{font-size:28px}}
-    .small{font-size:14px; color:var(--muted)}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Popka Musik — Musica per Matrimoni ed Eventi</title>
+<meta name="description" content="Popka — musica elegante e moderna per matrimoni, aperitivi e DJ set in Veneto. Contattaci per un preventivo.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#fff2e6;
+  --text:#222;
+  --muted:#6b655f;
+  --accent:#ff6b6b;
+  --accent-light:#ffa86b;
+  --card:#ffffff;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased}
+a{color:inherit; text-decoration:none}
+.container{max-width:var(--maxw); margin:0 auto; padding:28px}
+
+/* Hero */
+.hero{position:relative; height:72vh; min-height:420px; display:flex; align-items:center; justify-content:center; text-align:center;}
+.hero .bg{position:absolute; inset:0; background:url('hero.jpg') center/cover no-repeat; filter:brightness(0.6);}
+.hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));}
+.hero .content{position:relative; z-index:2; width:100%;}
+.brand{
+  letter-spacing:5px; font-weight:800; font-size:30px; 
+  color:#fff; 
+  background:linear-gradient(90deg,var(--accent),var(--accent-light)); 
+  display:inline-block; padding:8px 16px; border-radius:10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand:hover{
+  transform:rotate(-2deg) scale(1.05);
+  box-shadow:0 0 12px rgba(255,107,107,0.6);
+}
+h1{
+  font-size:46px; 
+  margin:12px 0 12px; 
+  color:#fff; 
+  text-shadow:2px 2px 12px rgba(0,0,0,0.7), 0 0 8px rgba(255,107,107,0.4);
+  transition: transform 0.3s ease;
+  cursor:default;
+}
+h1:hover{transform:scale(1.04);}
+p.lead{color:#fff; opacity:0.95; max-width:720px; font-size:20px; margin:0 auto;}
+.hero-cta{margin-top:24px}
+.btn{display:inline-block; padding:14px 24px; border-radius:14px; font-weight:700; cursor:pointer; transition: all 0.35s ease;}
+.btn-primary{background:var(--accent); color:#fff; box-shadow:0 4px 12px rgba(255,107,107,0.4);}
+.btn-primary:hover{
+  background:var(--accent-light); 
+  transform:scale(1.08);
+  animation: bounce 0.35s;
+  box-shadow:0 6px 16px rgba(255,107,107,0.6);
+}
+@keyframes bounce{
+  0%{transform:scale(1.08)}
+  50%{transform:scale(1.12)}
+  100%{transform:scale(1.08)}
+}
+.btn-ghost{background:transparent; border:2px solid rgba(255,255,255,0.6); color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,0.15); transform:scale(1.05);}
+
+/* Sections */
+section{padding:60px 0; transition: all 0.8s ease;}
+.card{background:var(--card); border-radius:20px; padding:28px; box-shadow:0 8px 28px rgba(15,15,15,0.08); transition: transform 0.35s ease, box-shadow 0.35s ease;}
+.card:hover{transform:translateY(-6px); box-shadow:0 14px 36px rgba(15,15,15,0.12);}
+.grid{display:grid; gap:18px}
+.grid-2{grid-template-columns:1fr 1fr}
+h2{margin:0 0 14px; color:var(--accent); transition: transform 0.3s ease, text-shadow 0.3s ease;}
+h2:hover{transform:scale(1.05); text-shadow:0 0 8px rgba(255,107,107,0.4);}
+.muted{color:var(--muted)}
+.services{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px}
+.service{padding:20px; border-radius:18px; background:linear-gradient(135deg, rgba(255,107,107,0.15), rgba(255,168,107,0.15)); transition: transform 0.35s ease, box-shadow 0.35s ease;}
+.service:hover{transform:translateY(-6px) scale(1.05) rotate(-1deg); box-shadow:0 14px 36px rgba(255,107,107,0.18);}
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.gallery img, .gallery iframe{width:100%; border-radius:14px; object-fit:cover; height:220px; transition: transform 0.3s ease;}
+.gallery img:hover, .gallery iframe:hover{transform:scale(1.05) rotate(1deg);}
+.contact-grid{display:grid; grid-template-columns:1fr 360px; gap:24px}
+.contact-card{display:flex; flex-direction:column; gap:10px}
+footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
+.small{font-size:14px; color:var(--muted)}
+
+/* Images del team */
+.team-img{width:100%; max-width:280px; border-radius:16px; margin-top:12px; transform: rotate(-1deg); transition: transform 0.3s ease;}
+.team-img:hover{transform:rotate(1deg) scale(1.05);}
+
+/* Fade-in animazione */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {opacity:1; transform: translateY(0);}
+
+/* Icon social hover */
+i.fab{transition: transform 0.3s;}
+i.fab:hover{transform:scale(1.2);}
+
+/* Responsive */
+@media (max-width:900px){.grid-2{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}.hero{height:56vh}}
+@media (max-width:520px){.gallery img, .gallery iframe{height:140px}h1{font-size:28px}}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="bg"></div>
-    <div class="overlay"></div>
-    <div class="container content">
-      <span class="brand">POPKA</span>
-      <h1>Musica elegante e moderna per matrimoni, aperitivi e DJ set</h1>
-      <p class="lead">Offriamo formazione per cerimonia, musica da aperitivo e DJ set per il party serale. Perfetti per matrimoni, feste aziendali e compleanni in Veneto.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#contact">Contattaci ora</a>
-        <a class="btn btn-ghost" href="#gallery" style="margin-left:12px">Guarda la gallery</a>
+
+<header class="hero fade-in">
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="container content">
+    <span class="brand">POPKA</span>
+    <h1>Musica elegante e moderna per matrimoni, aperitivi e DJ set</h1>
+    <p class="lead">Formazioni su misura per cerimonia, aperitivo e festa serale. Perfetti per matrimoni, eventi aziendali e compleanni in Veneto.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">Contattaci ora</a>
+      <a class="btn btn-ghost" href="#gallery" style="margin-left:12px">Guarda la gallery</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+<section id="about" class="fade-in">
+  <div class="card fade-in">
+    <div class="grid grid-2">
+      <div>
+        <h2>Chi siamo</h2>
+        <p class="muted">Popka è un progetto musicale moderno ed elegante, nato per accompagnare i momenti più importanti con cura e professionalità. Le nostre formazioni spaziano dal duo voce-pianoforte, ad abbinamenti con violino e arpa, fino al DJ set per la festa serale.</p>
+        <img src="images/team1.jpg" alt="Il team Popka" class="team-img fade-in">
+        <p class="small">Lineup tipica: voce, pianoforte/keyboard, violino, arpa e DJ/voce per il party.</p>
+      </div>
+      <div>
+        <h2>Perché sceglierci</h2>
+        <ul class="small muted fade-in">
+          <li>Esperienza in cerimonie e ricevimenti</li>
+          <li>Repertorio versatile: pop, soul, jazz, musica italiana e classica</li>
+          <li>Soluzioni personalizzate e gestione completa della scaletta</li>
+          <li>Operiamo in tutto il Veneto</li>
+        </ul>
+        <img src="images/team2.jpg" alt="Popka live" class="team-img fade-in">
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main class="container">
-    <section id="about">
-      <div class="card">
-        <div class="grid grid-2">
-          <div>
-            <h2>Chi siamo</h2>
-            <p class="muted">Popka è un progetto musicale moderno ed elegante, nato per accompagnare i momenti più importanti con cura e professionalità. Le nostre formazioni spaziano dal duo voce-pianoforte, ad abbinamenti con violino e arpa, fino al DJ set per la festa serale.</p>
-            <p class="small">Lineup tipica: voce, pianoforte/keyboard, violino, arpa e DJ/voce per il party.</p>
-          </div>
-          <div>
-            <h2>Perché sceglierci</h2>
-            <ul class="small muted">
-              <li>Esperienza in cerimonie e ricevimenti</li>
-              <li>Repertorio versatile: pop, soul, jazz, musica italiana e classica</li>
-              <li>Soluzioni personalizzate e gestione completa della scaletta</li>
-              <li>Operiamo in tutto il Veneto</li>
-            </ul>
-          </div>
-        </div>
+<section id="services" class="fade-in">
+<h2>Servizi</h2>
+<p class="small muted">Formule disponibili per cerimonia, aperitivo e serata.</p>
+<div class="services" style="margin-top:16px">
+  <div class="service card fade-in">
+    <h3>Cerimonia</h3>
+    <p class="small muted">Musica per rito civile o religioso — ingresso, brani strumentali e uscita degli sposi.</p>
+  </div>
+  <div class="service card fade-in">
+    <h3>Aperitivo & Ricevimento</h3>
+    <p class="small muted">Repertorio soft e raffinato per l'aperitivo e il sottofondo durante il ricevimento.</p>
+  </div>
+  <div class="service card fade-in">
+    <h3>DJ Set & Party</h3>
+    <p class="small muted">DJ set cantato con playlist personalizzata, animazione e impianto professionale.</p>
+  </div>
+  <div class="service card fade-in">
+    <h3>Eventi aziendali & Compleanni</h3>
+    <p class="small muted">Soluzioni su misura per eventi aziendali, aperitivi aziendali e feste private.</p>
+  </div>
+</div>
+</section>
+
+<section id="gallery" class="fade-in">
+<h2>Gallery Video</h2>
+<p class="small muted">Clicca su un thumbnail per vedere il video. (I video vengono caricati da YouTube.)</p>
+
+<div class="gallery" style="margin-top:12px">
+  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/mZxbyum4C10" style="cursor:pointer;">
+    <img src="https://img.youtube.com/vi/mZxbyum4C10/hqdefault.jpg" alt="Popka video 1">
+  </div>
+  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/9OGrHQUYqiY" style="cursor:pointer;">
+    <img src="https://img.youtube.com/vi/9OGrHQUYqiY/hqdefault.jpg" alt="Popka video 2">
+  </div>
+  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/e7gjfu5oJj0" style="cursor:pointer;">
+    <img src="https://img.youtube.com/vi/e7gjfu5oJj0/hqdefault.jpg" alt="Popka video 3">
+  </div>
+  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/BQ_7bmbOVEo" style="cursor:pointer;">
+    <img src="https://img.youtube.com/vi/BQ_7bmbOVEo/hqdefault.jpg" alt="Popka video 4">
+  </div>
+</div>
+
+<div id="video-player-container" style="margin-top:16px; display:none;">
+  <iframe id="main-video" width="100%" height="480" style="border-radius:14px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</section>
+
+<section id="contact" class="fade-in">
+<h2>Contatti</h2>
+<div class="contact-grid" style="margin-top:12px">
+  <div>
+    <div class="card contact-card fade-in">
+      <p class="small muted">Per informazioni e preventivi compila il form o contattaci direttamente.</p>
+      <div style="margin-top:10px">
+        <p style="margin:0;font-weight:700">Telefono</p>
+        <p class="small">+39 349 560 4493</p>
+        <p style="margin:6px 0 0;font-weight:700">Email</p>
+        <p class="small"><a href="mailto:popkamusik@gmail.com">popkamusik@gmail.com</a></p>
+        <p style="margin:6px 0 0;font-weight:700">Social</p>
+        <p class="small">
+          <a href="https://www.instagram.com/popka_musik/" target="_blank" style="margin-right:12px">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/popkaduolive/" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </p>
+        <p style="margin-top:12px" class="small muted">Zona operativa: Veneto</p>
       </div>
-    </section>
-
-    <section id="services">
-      <h2>Servizi</h2>
-      <p class="small muted">Formule disponibili per cerimonia, aperitivo e serata.</p>
-      <div class="services" style="margin-top:16px">
-        <div class="service card">
-          <h3>Cerimonia</h3>
-          <p class="small muted">Musica per rito civile o religioso — ingresso, brani strumentali e uscita degli sposi.</p>
-        </div>
-        <div class="service card">
-          <h3>Aperitivo & Ricevimento</h3>
-          <p class="small muted">Repertorio soft e raffinato per l'aperitivo e il sottofondo durante il ricevimento.</p>
-        </div>
-        <div class="service card">
-          <h3>DJ Set & Party</h3>
-          <p class="small muted">DJ set cantato con playlist personalizzata, animazione e impianto professionale.</p>
-        </div>
-        <div class="service card">
-          <h3>Eventi aziendali & Compleanni</h3>
-          <p class="small muted">Soluzioni su misura per eventi aziendali, aperitivi aziendali e feste private.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p class="small muted">Foto e momenti dal vivo. (Sostituisci le immagini con le tue immagini ad alta risoluzione nella cartella <code>images/</code>).</p>
-      <div class="gallery" style="margin-top:12px">
-        <img src="images/gallery1.jpg" alt="Popka in cerimonia">
-        <img src="images/gallery2.jpg" alt="Popka all'aperitivo">
-        <img src="images/gallery3.jpg" alt="DJ set Popka">
-        <img src="images/gallery4.jpg" alt="Violino e pianoforte">
-        <img src="images/gallery5.jpg" alt="Foto di gruppo Popka">
-        <img src="images/gallery6.jpg" alt="Momento live Popka">
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contatti</h2>
-      <div class="contact-grid" style="margin-top:12px">
-        <div>
-          <div class="card contact-card">
-            <p class="small muted">Per informazioni e preventivi compila il form o contattaci direttamente.</p>
-            <div style="margin-top:10px">
-              <p style="margin:0;font-weight:700">Telefono</p>
-              <p class="small">+39 349 560 4493</p>
-              <p style="margin:6px 0 0;font-weight:700">Email</p>
-              <p class="small"><a href="mailto:popkamusik@gmail.com">popkamusik@gmail.com</a></p>
-              <p style="margin:6px 0 0;font-weight:700">Social</p>
-              <p class="small"><a href="https://www.instagram.com/popka_musik/" target="_blank">Instagram</a> — <a href="https://www.facebook.com/popkaduolive/" target="_blank">Facebook</a></p>
-              <p style="margin-top:12px" class="small muted">Zona operativa: Veneto</p>
-            </div>
-          </div>
-        </div>
-        <aside>
-          <div class="card">
-            <h3>Richiedi un preventivo</h3>
-            <p class="small muted">Compila i dettagli e ti risponderemo al più presto.</p>
-            <form action="mailto:popkamusik@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
-              <input name="Nome" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-              <input name="Email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-              <input name="Telefono" placeholder="Telefono" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-              <textarea name="Messaggio" placeholder="Descrizione evento" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1"></textarea>
-              <button type="submit" class="btn btn-primary">Invia richiesta</button>
-            </form>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="margin-bottom:6px">© 2025 Popka Musik — Tutti i diritti riservati</div>
-      <div class="small muted">Realizzato con cura. Foto e video a scopo dimostrativo.</div>
     </div>
-  </footer>
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click', e=>{e.preventDefault();const target=document.querySelector(a.getAttribute('href'));if(target) target.scrollIntoView({behavior:'smooth', block:'start'});})})
-  </script>
+  </div>
+  <aside>
+    <div class="card fade-in">
+      <h3>Richiedi un preventivo</h3>
+      <p class="small muted">Compila i dettagli e ti risponderemo al più presto.</p>
+      <form action="https://formspree.io/f/yourFormID" method="POST" style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <input name="Nome" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+        <input name="Email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+        <input name="Telefono" placeholder="Telefono" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+        <textarea name="Messaggio" placeholder="Descrizione evento" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1"></textarea>
+        <button type="submit" class="btn btn-primary">Invia richiesta</button>
+      </form>
+    </div>
+  </aside>
+</div>
+</section>
+
+<footer class="fade-in">
+  <div class="container">
+    <div style="margin-bottom:6px">© 2025 Popka Musik — Tutti i diritti riservati</div>
+    <div class="small muted">Realizzato con cura. Foto e video a scopo dimostrativo.</div>
+    <div style="margin-top:6px">
+      <a href="https://www.instagram.com/popka_musik/" target="_blank" style="margin-right:12px">
+        <i class="fab fa-instagram" style="font-size:24px;color:#E1306C;"></i>
+      </a>
+      <a href="https://www.facebook.com/popkaduolive/" target="_blank">
+        <i class="fab fa-facebook" style="font-size:24px;color:#1877F2;"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  })
+});
+
+// Gallery video YouTube interattiva
+const thumbs = document.querySelectorAll('.video-thumb');
+const playerContainer = document.getElementById('video-player-container');
+const mainVideo = document.getElementById('main-video');
+
+thumbs.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    const src = thumb.getAttribute('data-src') + "?autoplay=1";
+    mainVideo.src = src;
+    playerContainer.style.display = 'block';
+    mainVideo.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+});
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+faders.forEach(fader => observer.observe(fader));
+</script>
+
 </body>
 </html>
