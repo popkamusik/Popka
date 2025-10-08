@@ -7,13 +7,51 @@
   <meta name="description" content="Popka — musica elegante e moderna per matrimoni, aperitivi e DJ set in Veneto. Contattaci per un preventivo.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Stili identici a quelli già presenti nel tuo file originale */
-    /* ... (li puoi mantenere invariati) ... */
+    :root{
+      --bg:#faf7f3;
+      --text:#111111;
+      --muted:#6b655f;
+      --accent:#c9a86b;
+      --card:#ffffff;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px}
+    .hero{position:relative; height:72vh; min-height:420px; display:flex; align-items:center;}
+    .hero .bg{position:absolute; inset:0; background:url('hero.jpg') center/cover no-repeat; filter:brightness(0.65) saturate(1.05);}
+    .hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(250,247,243,0.16), rgba(250,247,243,0.5));}
+    .hero .content{position:relative; z-index:2; width:100%;}
+    .brand{letter-spacing:4px; font-weight:800; font-size:26px; color:var(--card); background:linear-gradient(90deg,var(--accent),rgba(255,255,255,0.12)); display:inline-block; padding:6px 12px; border-radius:6px}
+    h1{font-size:42px; margin:12px 0 8px; color:#fff}
+    p.lead{color:#fff; opacity:0.95; max-width:720px; font-size:18px}
+    .hero-cta{margin-top:18px}
+    .btn{display:inline-block; padding:12px 18px; border-radius:10px; font-weight:600; cursor:pointer}
+    .btn-primary{background:var(--accent); color:#111}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff}
+    section{padding:60px 0}
+    .card{background:var(--card); border-radius:14px; padding:22px; box-shadow:0 6px 24px rgba(15,15,15,0.06)}
+    .grid{display:grid; gap:18px}
+    .grid-2{grid-template-columns:1fr 1fr}
+    h2{margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .services{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px}
+    .service{padding:16px; border-radius:10px; background:linear-gradient(180deg, rgba(249,246,243,0.6), rgba(255,255,255,0.6));}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+    .gallery img{width:100%; height:200px; object-fit:cover; border-radius:8px}
+    .contact-grid{display:grid; grid-template-columns:1fr 360px; gap:22px}
+    .contact-card{display:flex; flex-direction:column; gap:8px}
+    .contact-row{display:flex; gap:10px; align-items:center}
+    footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
+    @media (max-width:900px){.grid-2{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}h1{font-size:34px}.hero{height:56vh}}
+    @media (max-width:520px){.gallery img{height:140px}h1{font-size:28px}}
+    .small{font-size:14px; color:var(--muted)}
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="bg" style="background:url('images/hero.jpg') center/cover no-repeat;"></div>
+    <div class="bg"></div>
     <div class="overlay"></div>
     <div class="container content">
       <span class="brand">POPKA</span>
@@ -21,7 +59,7 @@
       <p class="lead">Offriamo formazione per cerimonia, musica da aperitivo e DJ set per il party serale. Perfetti per matrimoni, feste aziendali e compleanni in Veneto.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Contattaci ora</a>
-        <a class="btn btn-ghost" href="#gallery" style="margin-left:12px">Guarda i video</a>
+        <a class="btn btn-ghost" href="#gallery" style="margin-left:12px">Guarda la gallery</a>
       </div>
     </div>
   </header>
@@ -32,9 +70,8 @@
         <div class="grid grid-2">
           <div>
             <h2>Chi siamo</h2>
-            <p class="muted">Popka è un progetto musicale moderno ed elegante...</p>
+            <p class="muted">Popka è un progetto musicale moderno ed elegante, nato per accompagnare i momenti più importanti con cura e professionalità. Le nostre formazioni spaziano dal duo voce-pianoforte, ad abbinamenti con violino e arpa, fino al DJ set per la festa serale.</p>
             <p class="small">Lineup tipica: voce, pianoforte/keyboard, violino, arpa e DJ/voce per il party.</p>
-            <img src="images/popka_duo.jpg" alt="Popka Duo" style="width:100%; border-radius:8px; margin-top:24px">
           </div>
           <div>
             <h2>Perché sceglierci</h2>
@@ -55,36 +92,33 @@
       <div class="services" style="margin-top:16px">
         <div class="service card">
           <h3>Cerimonia</h3>
-          <p class="small muted">Musica per rito civile o religioso...</p>
+          <p class="small muted">Musica per rito civile o religioso — ingresso, brani strumentali e uscita degli sposi.</p>
         </div>
         <div class="service card">
           <h3>Aperitivo & Ricevimento</h3>
-          <p class="small muted">Repertorio soft e raffinato...</p>
+          <p class="small muted">Repertorio soft e raffinato per l'aperitivo e il sottofondo durante il ricevimento.</p>
         </div>
         <div class="service card">
           <h3>DJ Set & Party</h3>
-          <p class="small muted">DJ set cantato con playlist personalizzata...</p>
+          <p class="small muted">DJ set cantato con playlist personalizzata, animazione e impianto professionale.</p>
         </div>
         <div class="service card">
           <h3>Eventi aziendali & Compleanni</h3>
-          <p class="small muted">Soluzioni su misura per eventi aziendali...</p>
+          <p class="small muted">Soluzioni su misura per eventi aziendali, aperitivi aziendali e feste private.</p>
         </div>
       </div>
-      <img src="images/popka_live.jpg" alt="Popka Live" style="width:100%; border-radius:8px; margin-top:32px">
     </section>
 
     <section id="gallery">
-      <h2>Gallery Video</h2>
-      <p class="small muted">Momenti dal vivo e performance musicali.</p>
+      <h2>Gallery</h2>
+      <p class="small muted">Foto e momenti dal vivo. (Sostituisci le immagini con le tue immagini ad alta risoluzione nella cartella <code>images/</code>).</p>
       <div class="gallery" style="margin-top:12px">
-        <video controls style="width:100%; border-radius:8px">
-          <source src="videos/popka1.mp4" type="video/mp4">
-          Il tuo browser non supporta il video.
-        </video>
-        <video controls style="width:100%; border-radius:8px; margin-top:12px">
-          <source src="videos/popka2.mp4" type="video/mp4">
-          Il tuo browser non supporta il video.
-        </video>
+        <img src="images/gallery1.jpg" alt="Popka in cerimonia">
+        <img src="images/gallery2.jpg" alt="Popka all'aperitivo">
+        <img src="images/gallery3.jpg" alt="DJ set Popka">
+        <img src="images/gallery4.jpg" alt="Violino e pianoforte">
+        <img src="images/gallery5.jpg" alt="Foto di gruppo Popka">
+        <img src="images/gallery6.jpg" alt="Momento live Popka">
       </div>
     </section>
 
@@ -124,20 +158,12 @@
 
   <footer>
     <div class="container">
-      <img src="images/popka_team.jpg" alt="Popka Team" style="width:100%; border-radius:8px; margin-bottom:24px">
       <div style="margin-bottom:6px">© 2025 Popka Musik — Tutti i diritti riservati</div>
       <div class="small muted">Realizzato con cura. Foto e video a scopo dimostrativo.</div>
     </div>
   </footer>
-
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const target=document.querySelector(a.getAttribute('href'));
-        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-      })
-    })
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click', e=>{e.preventDefault();const target=document.querySelector(a.getAttribute('href'));if(target) target.scrollIntoView({behavior:'smooth', block:'start'});})})
   </script>
 </body>
 </html>
