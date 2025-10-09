@@ -94,6 +94,16 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
 }
 .fade-in.visible {opacity:1; transform: translateY(0);}
 
+/* Icon social - ingranditi */
+.large i.fab, .contact-card i.fab {
+  font-size: 34px; /* ingrandito */
+  transition: transform 0.3s ease, color 0.25s ease;
+}
+.large i.fab:hover, .contact-card i.fab:hover {
+  transform: scale(1.25);
+  color: var(--accent);
+}
+
 /* Reviews carousel */
 #reviews h2{color:var(--accent); margin-bottom:6px;}
 .reviews-container{
@@ -104,7 +114,7 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
 .review-track{
   display:flex;
   gap:16px;
-  animation: scrollReviews 90s linear infinite;
+  animation: scrollReviews 90s linear infinite; /* desktop: lento */
 }
 @keyframes scrollReviews{
   0% {transform: translateX(0);}
@@ -132,8 +142,21 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
 .review-text{font-size:13px; line-height:1.4; max-height:200px; overflow:hidden;}
 
 /* Responsive */
-@media (max-width:900px){.grid-2{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}}
-@media (max-width:520px){.gallery img, .gallery iframe{height:140px}h1{font-size:28px}.review{min-width:260px; max-width:260px}}
+@media (max-width:900px){
+  .grid-2{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:36px}
+  /* mobile: velocizzare lo scorrimento recensioni */
+  .review-track{ animation-duration: 30s !important; }
+}
+@media (max-width:520px){
+  .gallery img, .gallery iframe{height:140px}
+  h1{font-size:28px}
+  .review{min-width:260px; max-width:260px}
+  /* ancora più veloce per schermi molto stretti */
+  .review-track{ animation-duration: 18s !important; }
+}
 </style>
 </head>
 <body>
@@ -277,17 +300,41 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
   <p class="small muted">Clicca su un thumbnail per vedere il video. (I video vengono caricati da YouTube.)</p>
 
   <div class="gallery" style="margin-top:12px">
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/e7gjfu5oJj0" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/e7gjfu5oJj0/hqdefault.jpg" alt="Popka video 1">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/L7fusBCJ6Yo" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/L7fusBCJ6Yo/hqdefault.jpg" alt="Popka video 2">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/video03" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/video03/hqdefault.jpg" alt="Popka video 3">
+    </div>
     <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/mZxbyum4C10" style="cursor:pointer;">
-      <img src="https://img.youtube.com/vi/mZxbyum4C10/hqdefault.jpg" alt="Popka video 1">
+      <img src="https://img.youtube.com/vi/mZxbyum4C10/hqdefault.jpg" alt="Popka video 4">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/tikXYbOCDno" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/tikXYbOCDno/hqdefault.jpg" alt="Popka video 5">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/QgDrnBf2tCA" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/QgDrnBf2tCA/hqdefault.jpg" alt="Popka video 6">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/video07" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/video07/hqdefault.jpg" alt="Popka video 7">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/X_o2f9IC_Xg" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/X_o2f9IC_Xg/hqdefault.jpg" alt="Popka video 8">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/yPC1A8zXt6s" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/yPC1A8zXt6s/hqdefault.jpg" alt="Popka video 9">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/video10" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/video10/hqdefault.jpg" alt="Popka video 10">
     </div>
     <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/9OGrHQUYqiY" style="cursor:pointer;">
-      <img src="https://img.youtube.com/vi/9OGrHQUYqiY/hqdefault.jpg" alt="Popka video 2">
+      <img src="https://img.youtube.com/vi/9OGrHQUYqiY/hqdefault.jpg" alt="Popka video 11">
     </div>
-    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/e7gjfu5oJj0" style="cursor:pointer;">
-      <img src="https://img.youtube.com/vi/e7gjfu5oJj0/hqdefault.jpg" alt="Popka video 3">
-    </div>
-    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/BQ_7bmbOVEo" style="cursor:pointer;">
-      <img src="https://img.youtube.com/vi/BQ_7bmbOVEo/hqdefault.jpg" alt="Popka video 4">
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/video12" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/video12/hqdefault.jpg" alt="Popka video 12">
     </div>
   </div>
 
