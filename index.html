@@ -77,6 +77,7 @@ h2:hover{transform:scale(1.05); text-shadow:0 0 8px rgba(255,107,107,0.4);}
 .services{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px}
 .service{padding:20px; border-radius:18px; background:linear-gradient(135deg, rgba(255,107,107,0.15), rgba(255,168,107,0.15)); transition: transform 0.35s ease, box-shadow 0.35s ease;}
 .service:hover{transform:translateY(-6px) scale(1.05) rotate(-1deg); box-shadow:0 14px 36px rgba(255,107,107,0.18);}
+.service img{width:100%; border-radius:12px; height:180px; object-fit:cover; margin-bottom:12px;}
 .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
 .gallery img, .gallery iframe{width:100%; border-radius:14px; object-fit:cover; height:220px; transition: transform 0.3s ease;}
 .gallery img:hover, .gallery iframe:hover{transform:scale(1.05) rotate(1deg);}
@@ -85,10 +86,6 @@ h2:hover{transform:scale(1.05); text-shadow:0 0 8px rgba(255,107,107,0.4);}
 footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
 .small{font-size:14px; color:var(--muted)}
 
-/* Images del team */
-.team-img{width:100%; max-width:280px; border-radius:16px; margin-top:12px; transform: rotate(-1deg); transition: transform 0.3s ease;}
-.team-img:hover{transform:rotate(1deg) scale(1.05);}
-
 /* Fade-in animazione */
 .fade-in {
   opacity: 0;
@@ -96,10 +93,6 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .fade-in.visible {opacity:1; transform: translateY(0);}
-
-/* Icon social hover */
-i.fab{transition: transform 0.3s; font-size:28px;}
-i.fab:hover{transform:scale(1.3);}
 
 /* Reviews carousel */
 #reviews h2{color:var(--accent); margin-bottom:6px;}
@@ -151,7 +144,7 @@ i.fab:hover{transform:scale(1.3);}
   <div class="container content">
     <span class="brand">POPKA</span>
     <h1>Musica elegante e moderna per matrimoni, aperitivi e DJ set</h1>
-    <p class="lead">Formazioni su misura per cerimonia, aperitivo e festa serale. Perfetti per matrimoni, eventi aziendali e compleanni in Veneto.</p>
+    <p class="lead">Formazioni su misura per cerimonia, aperitivo e festa serale. Perfetti per matrimoni, eventi e ricevimenti in Veneto.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#contact">Contattaci ora</a>
       <a class="btn btn-ghost" href="#gallery" style="margin-left:12px">Guarda la gallery</a>
@@ -167,18 +160,16 @@ i.fab:hover{transform:scale(1.3);}
       <div>
         <h2>Chi siamo</h2>
         <p class="muted">Popka è un progetto musicale moderno ed elegante, nato per accompagnare i momenti più importanti con cura e professionalità. Le nostre formazioni spaziano dal duo voce-pianoforte, ad abbinamenti con violino e arpa, fino al DJ set per la festa serale.</p>
-        <img src="images/team1.jpg" alt="Il team Popka" class="team-img fade-in">
         <p class="small">Lineup tipica: voce, pianoforte/keyboard, violino, arpa e DJ/voce per il party.</p>
       </div>
       <div>
         <h2>Perché sceglierci</h2>
-        <ul class="small muted fade-in">
+        <ul class="small muted">
           <li>Esperienza in cerimonie e ricevimenti</li>
           <li>Repertorio versatile: pop, soul, jazz, musica italiana e classica</li>
           <li>Soluzioni personalizzate e gestione completa della scaletta</li>
           <li>Operiamo in tutto il Veneto</li>
         </ul>
-        <img src="images/team2.jpg" alt="Popka live" class="team-img fade-in">
       </div>
     </div>
   </div>
@@ -186,26 +177,25 @@ i.fab:hover{transform:scale(1.3);}
 
 <!-- Sezione Servizi -->
 <section id="services" class="fade-in">
-<h2>Servizi</h2>
-<p class="small muted">Formule disponibili per cerimonia, aperitivo e serata.</p>
-<div class="services" style="margin-top:16px">
-  <div class="service card fade-in">
-    <h3>Cerimonia</h3>
-    <p class="small muted">Musica per rito civile o religioso — ingresso, brani strumentali e uscita degli sposi.</p>
+  <h2>Servizi</h2>
+  <p class="small muted">Formule disponibili per cerimonia, aperitivo e serata.</p>
+  <div class="services" style="margin-top:16px">
+    <div class="service card fade-in">
+      <img src="images/cerimonia.jpg" alt="Cerimonia Popka">
+      <h3>Cerimonia</h3>
+      <p class="small muted">Musica per rito civile o religioso — ingresso, brani strumentali e uscita degli sposi.</p>
+    </div>
+    <div class="service card fade-in">
+      <img src="images/aperitivo.jpg" alt="Aperitivo Popka">
+      <h3>Aperitivo & Ricevimento</h3>
+      <p class="small muted">Repertorio soft e raffinato per l'aperitivo e il sottofondo durante il ricevimento.</p>
+    </div>
+    <div class="service card fade-in">
+      <img src="images/djset.jpg" alt="DJ Set Popka">
+      <h3>DJ Set & Party</h3>
+      <p class="small muted">DJ set cantato con playlist personalizzata, animazione e impianto professionale.</p>
+    </div>
   </div>
-  <div class="service card fade-in">
-    <h3>Aperitivo & Ricevimento</h3>
-    <p class="small muted">Repertorio soft e raffinato per l'aperitivo e il sottofondo durante il ricevimento.</p>
-  </div>
-  <div class="service card fade-in">
-    <h3>DJ Set & Party</h3>
-    <p class="small muted">DJ set cantato con playlist personalizzata, animazione e impianto professionale.</p>
-  </div>
-  <div class="service card fade-in">
-    <h3>Eventi aziendali & Compleanni</h3>
-    <p class="small muted">Soluzioni su misura per eventi aziendali, aperitivi aziendali e feste private.</p>
-  </div>
-</div>
 </section>
 
 <!-- Sezione Recensioni -->
@@ -214,135 +204,145 @@ i.fab:hover{transform:scale(1.3);}
   <p class="small muted">Cosa dicono gli sposi di noi</p>
   <div class="reviews-container">
     <div class="review-track">
-      <!-- 9 recensioni come da esempio sopra -->
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Giorgia — 24/09/2025</div>
         <div class="review-title">Un usignolo</div>
         <div class="review-text">Silvia e Stefania sono state delicate ma presenti durante tutta la cerimonia. Noi, il parroco e gli invitati siamo rimasti senza parole dalla voce meravigliosa di Silvia. Consiglio vivamente.</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Fabio — 13/09/2025</div>
         <div class="review-title">Competenza e professionalità</div>
         <div class="review-text">Roberto e il staff è stato parte integrante del nostro matrimonio. Ha creato la musica per il rito civile con piano e violino, hanno suonato tutte le nostre canzoni del cuore dal vivo in modo impeccabile, canzoni che non erano del loro repertorio. Hanno poi cantato dal vivo dal buffet fino all'ultimo minuto della nostra giornata. Tutto con professionalità e qualità. Fidatevi sono veramente una garanzia.</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Nani — 23/06/2025</div>
         <div class="review-title">Armonia e cura</div>
         <div class="review-text">Hanno accompagnato la messa del nostro matrimonio con la loro voce, arpa e violino. Il tutto è risultato molto armonioso, con brani anche originali e che abbiamo molto apprezzato. Inoltre, abbiamo chiesto di arrangiare alcune canzoni a noi care, che hanno saputo arrangiare in modo splendido!</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Vania — 07/11/2024</div>
         <div class="review-title">Musica dal vivo</div>
         <div class="review-text">Cercavamo un gruppo musicale che rimanesse tutto il giorno al nostro matrimonio con opzioni di canzoni cantate dal vivo, strumentale fra cui violino e che ci aiutasse a rendere la serata viva e divertente. Popka ha esaudito ogni nostra richiesta dalla cerimonia al party serale e tutti i nostri ospiti hanno gradito le canzoni. Molto disponibile Roberto ad aiutarci a scegliere la scaletta musicale e come organizzare il tutto. Lo abbiamo apprezzato moltissimo!</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Clara — 12/10/2023</div>
         <div class="review-title">Disponibilità e bravura</div>
-        <div class="review-text">È stato un intrattenimento musicale eccezionale che ha collaborato a rendere indimenticabile la giornata delle nostre nozze! Ci hanno accompagnato egregiamente durante i momenti della giornata dal buffet di aperitivi fino alla serata dance grazie alla loro versatilità e ampio repertorio. Avevamo tra gli invitati dei musicisti che ci si sono complimentati con le due cantanti Silvia e Arianna. Roberto durante la preparazione del matrimonio è stato molto disponibile, ci ha aiutato e supportato per ogni nostra domanda ed esigenza. Li consigliamo vivamente.</div>
+        <div class="review-text">È stato un intrattenimento musicale eccezionale che ha collaborato a rendere indimenticabile la giornata delle nostre nozze! Ci hanno accompagnato egregiamente durante i momenti della giornata dal buffet di aperitivi fino alla serata dance grazie alla loro versatilità e ampio repertorio. Avevamo tra gli invitati dei musicisti che ci si sono complimentati con le due cantanti. Roberto durante la preparazione del matrimonio è stato molto disponibile, ci ha aiutato e supportato per ogni nostra domanda ed esigenza. Li consigliamo vivamente.</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Enrico — 13/09/2023</div>
         <div class="review-title">Perfetta colonna sonora</div>
         <div class="review-text">Consigliato da amici musicisti, ha fornito la perfetta assistenza al nostro matrimonio. Molto disponibile e gentile, preciso in fase di preventivazione e pianificazione con ottimi consigli sulla gestione delle tempistiche della giornata, ampio repertorio e possibilità di personalizzazione di ogni fase del ricevimento, performance live voce e tastiera da brivido, dj set... Noi e i nostri ospiti siamo rimasti entusiasti, la colonna sonora perfetta di un giorno memorabile. Prezzo molto competitivo. 5 pieno!</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Marco — 05/06/2023</div>
         <div class="review-title">Raccomandato</div>
         <div class="review-text">Grazie mille per essere venuti...ci ha fatto molto piacere...avete fatto troppo!! Nella confusione poi mi son dimenticato di lasciarvi la bomboniera ma passo in fil! Grazie ancora.</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Vanessa — 20/09/2022</div>
         <div class="review-title">Colonna sonora di un giorno stupendo</div>
         <div class="review-text">Bravura, professionalità e disponibilità, Roberto, dj, ed Eleonora, voce stupenda e versatile sono stati di sottofondo alla nostra giornata più bella, disponibili alle richieste nostre e degli ospiti, sono riusciti ad accompagnarci fino alla sera con musica sia riprodotta che cantata dalla bravissima Eleonora, sottolineando i momenti più importanti con le nostre richieste, non potevamo fare scelta migliore.</div>
       </div>
+
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Lara — 17/08/2022</div>
         <div class="review-title">Tutto perfetto!</div>
         <div class="review-text">Ci hanno accompagnato sia per la cerimonia civile che per il ricevimento, nella stessa location. Voce meravigliosa e musica impeccabile. Abbiamo ricevuto i complimenti di tutti gli invitati...tutto perfetto! E super consigliati.</div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- Sezione Gallery Video -->
 <section id="gallery" class="fade-in">
-<h2>Gallery Video</h2>
-<p class="small muted">Clicca su un thumbnail per vedere il video. (I video vengono caricati da YouTube.)</p>
+  <h2>Gallery Video</h2>
+  <p class="small muted">Clicca su un thumbnail per vedere il video. (I video vengono caricati da YouTube.)</p>
 
-<div class="gallery" style="margin-top:12px">
-  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/mZxbyum4C10" style="cursor:pointer;">
-    <img src="https://img.youtube.com/vi/mZxbyum4C10/hqdefault.jpg" alt="Popka video 1">
+  <div class="gallery" style="margin-top:12px">
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/mZxbyum4C10" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/mZxbyum4C10/hqdefault.jpg" alt="Popka video 1">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/9OGrHQUYqiY" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/9OGrHQUYqiY/hqdefault.jpg" alt="Popka video 2">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/e7gjfu5oJj0" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/e7gjfu5oJj0/hqdefault.jpg" alt="Popka video 3">
+    </div>
+    <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/BQ_7bmbOVEo" style="cursor:pointer;">
+      <img src="https://img.youtube.com/vi/BQ_7bmbOVEo/hqdefault.jpg" alt="Popka video 4">
+    </div>
   </div>
-  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/9OGrHQUYqiY" style="cursor:pointer;">
-    <img src="https://img.youtube.com/vi/9OGrHQUYqiY/hqdefault.jpg" alt="Popka video 2">
-  </div>
-  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/e7gjfu5oJj0" style="cursor:pointer;">
-    <img src="https://img.youtube.com/vi/e7gjfu5oJj0/hqdefault.jpg" alt="Popka video 3">
-  </div>
-  <div class="video-thumb fade-in" data-src="https://www.youtube.com/embed/BQ_7bmbOVEo" style="cursor:pointer;">
-    <img src="https://img.youtube.com/vi/BQ_7bmbOVEo/hqdefault.jpg" alt="Popka video 4">
-  </div>
-</div>
 
-<div id="video-player-container" style="margin-top:16px; display:none;">
-  <iframe id="main-video" width="100%" height="480" style="border-radius:14px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+  <div id="video-player-container" style="margin-top:16px; display:none;">
+    <iframe id="main-video" width="100%" height="480" style="border-radius:14px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </section>
 
 <section id="contact" class="fade-in">
-<h2>Contatti</h2>
-<div class="contact-grid" style="margin-top:12px">
-  <div>
-    <div class="card contact-card fade-in">
-      <p class="small muted">Per informazioni e preventivi compila il form o contattaci direttamente.</p>
-      <div style="margin-top:10px">
-        <p style="margin:0;font-weight:700">Telefono</p>
-        <p class="small">+39 349 560 4493</p>
-        <p style="margin:6px 0 0;font-weight:700">Email</p>
-        <p class="small"><a href="mailto:popkamusik@gmail.com">popkamusik@gmail.com</a></p>
-        <p style="margin:6px 0 0;font-weight:700">Social</p>
-        <p class="small">
-          <a href="https://www.instagram.com/popka_musik/" target="_blank" style="margin-right:12px">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.facebook.com/popkaduolive/" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </p>
-        <p style="margin-top:12px" class="small muted">Zona operativa: Veneto</p>
+  <h2>Contatti</h2>
+  <div class="contact-grid" style="margin-top:12px">
+    <div>
+      <div class="card contact-card fade-in">
+        <p class="small muted">Per informazioni e preventivi compila il form o contattaci direttamente.</p>
+        <div style="margin-top:10px">
+          <p style="margin:0;font-weight:700">Telefono</p>
+          <p class="small">+39 349 5604493</p>
+          <p style="margin:6px 0 0;font-weight:700">Email</p>
+          <p class="small"><a href="mailto:popkamusik@gmail.com">popkamusik@gmail.com</a></p>
+          <p style="margin:6px 0 0;font-weight:700">Social</p>
+          <p class="large">
+            <a href="https://www.instagram.com/popka_musik/" target="_blank" style="margin-right:12px">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/popkaduolive/" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </p>
+          <p style="margin-top:12px" class="small muted">Zona operativa: Veneto</p>
+        </div>
       </div>
     </div>
+    <aside>
+      <div class="card fade-in">
+        <h3>Richiedi un preventivo</h3>
+        <p class="small muted">Compila i dettagli e ti risponderemo al più presto.</p>
+        <form action="mailto:popkamusik@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+          <input name="Nome" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+          <input name="Email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+          <input name="Telefono" placeholder="Telefono" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
+          <textarea name="Messaggio" placeholder="Descrizione evento" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1"></textarea>
+          <button type="submit" class="btn btn-primary">Invia richiesta</button>
+        </form>
+      </div>
+    </aside>
   </div>
-  <aside>
-    <div class="card fade-in">
-      <h3>Richiedi un preventivo</h3>
-      <p class="small muted">Compila i dettagli e ti risponderemo al più presto.</p>
-      <form action="mailto:popkamusik@gmail.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
-        <input name="Nome" placeholder="Nome" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-        <input name="Email" placeholder="Email" type="email" required style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-        <input name="Telefono" placeholder="Telefono" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1">
-        <textarea name="Messaggio" placeholder="Descrizione evento" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e9e5e1"></textarea>
-        <button type="submit" class="btn btn-primary">Invia richiesta</button>
-      </form>
-    </div>
-  </aside>
-</div>
 </section>
 
+</main>
+
 <footer>
-<div class="container">
-  <div style="margin-bottom:6px">© 2025 Popka Musik — Tutti i diritti riservati</div>
-  <div class="small muted">Realizzato con cura. Foto e video a scopo dimostrativo.</div>
-</div>
+  <div class="container">
+    <div style="margin-bottom:6px">© 2025 Popka Musik — Tutti i diritti riservati</div>
+    <div class="small muted">Realizzato con cura. Foto e video a scopo dimostrativo.</div>
+  </div>
 </footer>
 
 <script>
