@@ -104,22 +104,15 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
   color: var(--accent);
 }
 
-/* Reviews carousel */
+/* Reviews carousel modificato: scroll manuale */
 #reviews h2{color:var(--accent); margin-bottom:6px;}
 .reviews-container{
-  overflow:hidden;
-  position:relative;
-  padding:12px 0;
-}
-.review-track{
+  overflow-x:auto;
+  overflow-y:hidden;
   display:flex;
   gap:16px;
-  animation: scrollReviews 90s linear infinite; /* desktop: lento */
-}
-
-@keyframes scrollReviews{
-  0% {transform: translateX(0);}
-  100% {transform: translateX(-100%);}
+  padding:12px 0;
+  scroll-behavior:smooth;
 }
 .review{
   min-width:350px;
@@ -148,15 +141,11 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
   .contact-grid{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
   h1{font-size:36px}
-  /* mobile: velocizzare lo scorrimento recensioni */
-  .review-track{ animation-duration: 30s !important; }
 }
 @media (max-width:520px){
   .gallery img, .gallery iframe{height:140px}
   h1{font-size:28px}
   .review{min-width:260px; max-width:260px}
-  /* ancora più veloce per schermi molto stretti */
-  .review-track{ animation-duration: 18s !important; }
 }
 </style>
 </head>
@@ -227,71 +216,60 @@ footer{padding:28px 0; text-align:center; color:var(--muted); font-size:14px}
   <h2>Le nostre recensioni</h2>
   <p class="small muted">Cosa dicono gli sposi di noi</p>
   <div class="reviews-container">
-    <div class="review-track">
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Giorgia — 24/09/2025</div>
         <div class="review-title">Un usignolo</div>
         <div class="review-text">Silvia e Stefania sono state delicate ma presenti durante tutta la cerimonia. Noi, il parroco e gli invitati siamo rimasti senza parole dalla voce meravigliosa di Silvia. Consiglio vivamente.</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Fabio — 13/09/2025</div>
         <div class="review-title">Competenza e professionalità</div>
         <div class="review-text">Roberto e il staff è stato parte integrante del nostro matrimonio. Ha creato la musica per il rito civile con piano e violino, hanno suonato tutte le nostre canzoni del cuore dal vivo in modo impeccabile, canzoni che non erano del loro repertorio. Hanno poi cantato dal vivo dal buffet fino all'ultimo minuto della nostra giornata. Tutto con professionalità e qualità. Fidatevi sono veramente una garanzia.</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Nani — 23/06/2025</div>
         <div class="review-title">Armonia e cura</div>
         <div class="review-text">Hanno accompagnato la messa del nostro matrimonio con la loro voce, arpa e violino. Il tutto è risultato molto armonioso, con brani anche originali e che abbiamo molto apprezzato. Inoltre, abbiamo chiesto di arrangiare alcune canzoni a noi care, che hanno saputo arrangiare in modo splendido!</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Vania — 07/11/2024</div>
         <div class="review-title">Musica dal vivo</div>
         <div class="review-text">Cercavamo un gruppo musicale che rimanesse tutto il giorno al nostro matrimonio con opzioni di canzoni cantate dal vivo, strumentale fra cui violino e che ci aiutasse a rendere la serata viva e divertente. Popka ha esaudito ogni nostra richiesta dalla cerimonia al party serale e tutti i nostri ospiti hanno gradito le canzoni. Molto disponibile Roberto ad aiutarci a scegliere la scaletta musicale e come organizzare il tutto. Lo abbiamo apprezzato moltissimo!</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Clara — 12/10/2023</div>
         <div class="review-title">Disponibilità e bravura</div>
         <div class="review-text">È stato un intrattenimento musicale eccezionale che ha collaborato a rendere indimenticabile la giornata delle nostre nozze! Ci hanno accompagnato egregiamente durante i momenti della giornata dal buffet di aperitivi fino alla serata dance grazie alla loro versatilità e ampio repertorio. Avevamo tra gli invitati dei musicisti che ci si sono complimentati con le due cantanti. Roberto durante la preparazione del matrimonio è stato molto disponibile, ci ha aiutato e supportato per ogni nostra domanda ed esigenza. Li consigliamo vivamente.</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Enrico — 13/09/2023</div>
         <div class="review-title">Perfetta colonna sonora</div>
         <div class="review-text">Consigliato da amici musicisti, ha fornito la perfetta assistenza al nostro matrimonio. Molto disponibile e gentile, preciso in fase di preventivazione e pianificazione con ottimi consigli sulla gestione delle tempistiche della giornata, ampio repertorio e possibilità di personalizzazione di ogni fase del ricevimento, performance live voce e tastiera da brivido, dj set... Noi e i nostri ospiti siamo rimasti entusiasti, la colonna sonora perfetta di un giorno memorabile. Prezzo molto competitivo. 5 pieno!</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Marco — 05/06/2023</div>
         <div class="review-title">Raccomandato</div>
         <div class="review-text">Grazie mille per essere venuti...ci ha fatto molto piacere...avete fatto troppo!! Nella confusione poi mi son dimenticato di lasciarvi la bomboniera ma passo in fil! Grazie ancora.</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Vanessa — 20/09/2022</div>
         <div class="review-title">Colonna sonora di un giorno stupendo</div>
         <div class="review-text">Bravura, professionalità e disponibilità, Roberto, dj, ed Eleonora, voce stupenda e versatile sono stati di sottofondo alla nostra giornata più bella, disponibili alle richieste nostre e degli ospiti, sono riusciti ad accompagnarci fino alla sera con musica sia riprodotta che cantata dalla bravissima Eleonora, sottolineando i momenti più importanti con le nostre richieste, non potevamo fare scelta migliore.</div>
       </div>
-
       <div class="review card">
         <div class="review-quote">“</div>
         <div class="reviewer-name-date">Lara — 17/08/2022</div>
         <div class="review-title">Tutto perfetto!</div>
         <div class="review-text">Ci hanno accompagnato sia per la cerimonia civile che per il ricevimento, nella stessa location. Voce meravigliosa e musica impeccabile. Abbiamo ricevuto i complimenti di tutti gli invitati...tutto perfetto! E super consigliati.</div>
       </div>
-
-    </div>
   </div>
 </section>
 
